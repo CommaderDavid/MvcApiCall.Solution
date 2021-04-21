@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-
+﻿using Microsoft.AspNetCore.Mvc;
+using MvcApiCall.Models;
 
 namespace MvcApiCall.Controllers
 {
@@ -12,7 +7,8 @@ namespace MvcApiCall.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            List<Article> allArticles = Article.GetArticles("[YOUR-API-KEY-HERE]");
+            return View(allArticles);
         }
     }
 }
