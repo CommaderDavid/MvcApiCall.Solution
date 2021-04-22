@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MvcApiCall.Models;
+using System.Collections.Generic;
 
 namespace MvcApiCall.Controllers
 {
@@ -7,7 +8,7 @@ namespace MvcApiCall.Controllers
     {
         public IActionResult Index()
         {
-            List<Article> allArticles = Article.GetArticles("[YOUR-API-KEY-HERE]");
+            List<Article> allArticles = Article.GetArticles(EnvironmentVariables.ApiKey);
             return View(allArticles);
         }
     }
